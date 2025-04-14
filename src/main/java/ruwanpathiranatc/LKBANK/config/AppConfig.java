@@ -13,9 +13,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import ruwanpathiranatc.LKBANK.repository.UserRepository;
 
 @Configuration
-@RequiredArgsConstructor
 public class AppConfig {
     private final UserRepository userRepository;
+
+    public AppConfig(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Bean
     public UserDetailsService userDetailsService() {
